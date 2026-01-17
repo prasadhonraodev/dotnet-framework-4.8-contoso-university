@@ -22,6 +22,10 @@ namespace ContosoUniversity
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            // Disable minification to avoid issues with modern JavaScript syntax (ES6+)
+            // The legacy ASP.NET minifier cannot parse modern JavaScript used in Bootstrap 5.3.3
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
